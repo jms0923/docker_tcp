@@ -7,19 +7,17 @@ import json
 def recv_msg(client_socket, addr):
     # while True:
     message = client_socket.recv(1024).decode()
-    print(str(addr) + ' : ' + message)
     jsonObj = makeJsonObject(message)
     # print(type(jsonObj))
     # print(jsonObj)
-    print(type(jsonObj))
-    print(jsonObj)
+    print(str(addr) + ' : ' + jsonObj)
     disconnect(client_socket)
     print(str(addr) + ' ' + 'disconnected\n')
 
 
 def makeJsonObject(msg):
-    # jsonObj = json.loads(msg)
-    jsonObj = json.dumps(msg)
+    jsonObj = json.loads(msg)
+    # jsonObj = json.dumps(msg)
     return jsonObj
 
 
