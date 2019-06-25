@@ -9,10 +9,10 @@ def recv_msg(client_socket, addr):
     message = client_socket.recv(1024).decode()
     print(str(addr) + ' : ' + message)
     jsonObj = makeJsonObject(message)
-    print(type(jsonObj))
-    print(jsonObj)
+    # print(type(jsonObj))
+    # print(jsonObj)
     disconnect(client_socket)
-    print(str(addr) + ' ' + 'disconnected')
+    print(str(addr) + ' ' + 'disconnected\n')
 
 
 def makeJsonObject(msg):
@@ -33,6 +33,8 @@ def main():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(('', port))
     server_socket.listen(numOfClient)
+    print('waiting cllient...')
+
 
     while True:
         (client_socket, addr) = server_socket.accept()
