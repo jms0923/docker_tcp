@@ -34,6 +34,7 @@ class sensing:
                 strJson += '}'
         # print(strJson)
         # jsonObj = json.loads(strJson)
-        jsonObj = json.dumps(strJson)
+        # jsonObj = json.dumps(strJson)
+        # print(type(jsonObj))
 
         return strJson
