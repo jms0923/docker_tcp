@@ -10,7 +10,8 @@ def recv_msg(client_socket, addr):
     jsonObj = makeJsonObject(message)
     # print(type(jsonObj))
     # print(jsonObj)
-    print(str(addr) + ' : ' + jsonObj)
+    print(type(jsonObj))
+    print(str(addr) + ' : ', jsonObj)
     disconnect(client_socket)
     print(str(addr) + ' ' + 'disconnected\n')
 
